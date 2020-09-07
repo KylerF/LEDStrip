@@ -10,19 +10,20 @@
 
 const int MIC_PIN = 23;
 
-const int colorSaturation = 128;
+// LED Brightness
+const int brightness = 128;
 
-const char* ssid = "MySpectrumWiFi58-2G";
-const char* password = "kylejoe19";
+const char* ssid = "SSID";
+const char* password = "PASSWORD";
 
 const unsigned long time_delay = 10;
 
 NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(LED_COUNT, LED_PIN);
 
-RgbColor red(colorSaturation, 0, 0);
-RgbColor green(0, colorSaturation, 0);
-RgbColor blue(0, 0, colorSaturation);
-RgbColor white(colorSaturation);
+RgbColor red(brightness, 0, 0);
+RgbColor green(0, brightness, 0);
+RgbColor blue(0, 0, brightness);
+RgbColor white(brightness);
 RgbColor black(0);
 
 HslColor hslRed(red);
@@ -118,9 +119,9 @@ void animate() {
 
   if (counting_up) {
     // Set LEDs to a random color one at a time
-    int random_r = random(0, colorSaturation);
-    int random_g = random(0, colorSaturation);
-    int random_b = random(0, colorSaturation); 
+    int random_r = random(0, brightness);
+    int random_g = random(0, brightness);
+    int random_b = random(0, brightness); 
 
     RgbColor random_rgb_color(random_r, random_g, random_b);
     
